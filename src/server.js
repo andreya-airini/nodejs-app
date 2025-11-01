@@ -15,6 +15,8 @@ import authRoutes from './routes/authRoutes.js';
 
 import cookieParser from 'cookie-parser';
 
+import userRoutes from './routes/userRoutes.js';
+
 const app = express();
 const PORT = process.env.PORT ?? 3030;
 
@@ -26,6 +28,7 @@ app.use(cookieParser());
 // Перший маршрут
 app.use(authRoutes);
 app.use(studentsRoutes);
+app.use(userRoutes);
 
 // Тестовий маршрут для генерації помилки
 app.get('/test-error', () => {
